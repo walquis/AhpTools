@@ -1,0 +1,8 @@
+#! /usr/bin/env jruby -J-cp conf/client:conf/spring-client
+
+require File.expand_path(File.dirname(__FILE__) + "/../lib/ahp_tools")
+require "cli/add_status_steps"
+require "commands/add_status_steps_command"
+
+AhpTools::CLI::AddStatusSteps.execute(STDOUT, ARGV)
+

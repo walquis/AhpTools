@@ -1,0 +1,29 @@
+require 'rubygems'
+require 'rake/gempackagetask'
+require 'rake/testtask'
+
+PKG_VERSION = "0.0.1"
+PKG_FILES = FileList["lib/ahp_tools.rb", "lib/**/*.rb", "../conf/**", "../jars/**"]
+
+spec = Gem::Specification.new do |s|
+  s.authors = "John Smith"
+  s.email = "john@smith.com"
+  s.homepage = "http://wiki/display/SE/Automated+Deployment"
+  s.platform = Gem::Platform::RUBY
+  s.summary = "anthill pro command line administration gem"
+  s.name = "ahp_tools"
+  s.version = PKG_VERSION
+  s.requirements << "none"
+  s.require_path = "lib"
+  s.executables = ["new_project", "new_environments", "list_environments", "set_security", "add_agents"]
+  s.files = PKG_FILES
+  s.description = "provided cli to anthill for creating projects, performing administration tasks etc"
+end
+
+Rake::GemPackageTask.new(spec) do |pkg|
+  pkg.need_zip = false
+  pkg.need_tar = false
+end
+
+
+

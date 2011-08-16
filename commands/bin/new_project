@@ -1,0 +1,7 @@
+#! /usr/bin/env jruby -J-cp conf/client:conf/spring-client
+
+require File.expand_path(File.dirname(__FILE__) + "/../lib/ahp_tools")
+require "cli/new_project"
+require "commands/new_project_command"
+
+AhpTools::CLI::NewProject.execute(STDOUT, ARGV)

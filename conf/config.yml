@@ -1,0 +1,25 @@
+:development:
+  :host_name: dev-box
+  :host_port: 4567
+  :username: admin
+  :password: blah
+
+:production:
+  :host_name: deploy
+  :host_port: 4567
+  :username: admin
+  :password: blah
+
+:production_db:
+  :host_name: prod-box
+  :host_port: 1433
+  :database: deploy
+  :username: deploy
+  :password: blah
+
+:development_db:
+  :host_name: dev-box
+  :host_port: 4567
+  :database: deploy
+  :username: deploy
+  :password: blah

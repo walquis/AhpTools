@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<service-list>
+
+    <service class="com.urbancode.anthill3.services.report.ReportService" 
+             factory-class="com.urbancode.commons.service.ClassServiceProducerImplDefault">
+        <class>com.urbancode.anthill3.services.report.ReportServiceImplClient</class>
+    </service>
+
+</service-list>

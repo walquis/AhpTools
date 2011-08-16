@@ -1,0 +1,7 @@
+#! /usr/bin/env jruby -J-cp conf/client:conf/spring-client
+
+require File.expand_path(File.dirname(__FILE__) + "/../lib/ahp_tools")
+require "cli/add_agents"
+require "commands/add_agents_command"
+
+AhpTools::CLI::AddAgents.execute(STDOUT, ARGV)

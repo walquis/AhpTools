@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+  <bean id="action-scope-factory" class="com.urbancode.anthill3.persistence.remoting.client.UnitOfWorkFactoryClient" singleton="true"/>
+
+  <bean id="agent-manager" class="com.urbancode.anthill3.services.agent.AgentManagerClient" singleton="true"/>
+
+  <bean id="agent-upgrade-service" class="com.urbancode.anthill3.services.agent.AgentUpgradeServiceClient" singleton="true"/>
+  
+  <bean id="agent-restart-service" class="com.urbancode.anthill3.services.agent.AgentRestartServiceClient" singleton="true"/>
+
+  <bean id="auth-token-service" class="com.urbancode.anthill3.services.authtoken.AuthTokenServiceClient" singleton="true"/>
+
+  <bean id="build-service" class="com.urbancode.anthill3.services.build.BuildServiceImplClient" singleton="true"/>
+
+  <bean id="codestation-repo-file-helper" class="com.urbancode.codestation2.server.CodestationRepositoryFileHelperClient" singleton="false"/>
+  
+  <bean id="file-info-service" class="com.urbancode.anthill3.services.file.FileInfoServiceClient" singleton="true"/>
+
+  <bean id="license-service" class="com.urbancode.anthill3.services.license.LicenseServiceClient" singleton="true"/>
+
+  <bean id="log-file-service" class="com.urbancode.anthill3.services.logging.LogFileServiceClient" singleton="false"/>
+
+  <bean id="log-path-helper" class="com.urbancode.anthill3.runtime.paths.LogPathHelperClient" singleton="true"/>
+
+  <!-- being removed for log-path-helper -->
+  <bean id="logging-service" class="com.urbancode.anthill3.services.logging.LoggingServiceImplClient" singleton="true"/>
+
+  <bean id="publish-path-helper" class="com.urbancode.anthill3.runtime.paths.PublishPathHelperClient" singleton="true"/>
+
+  <bean id="workflow-service" class="com.urbancode.anthill3.services.workflow.WorkflowServiceClient" singleton="true"/>
+
+</beans>

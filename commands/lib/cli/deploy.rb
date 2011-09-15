@@ -12,6 +12,7 @@ module AhpTools
           :debug       => false,
           :status_only => false
         }
+        mandatory_options = %w( project workflow environment buildlabel )
 
         parser = OptionParser.new do |opts|
 
@@ -68,6 +69,10 @@ module AhpTools
           end # opts.on_tail do
 
           opts.parse!( arguments )
+
+          if mandatory_options && mandatory_options.find { |o| options[o.to_sym].nil? }
+            stdout.puts opts; exit
+          end
 
           required_args = [:buildlabel, :project, :workflow]
           required_args << :environment if options[:status_only].nil?

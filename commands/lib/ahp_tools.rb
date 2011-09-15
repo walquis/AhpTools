@@ -5,6 +5,7 @@ $: << File.dirname(__FILE__) + "/ahp_tools"
 
 require 'java'
 require 'yaml'
+require 'erb'
 
 include Java
 
@@ -32,6 +33,5 @@ module AhpTools
   VERSION = '0.0.1'
   AHPTOOLS_ENV = ENV["AHPTOOLS_ENV"] || "development"
   AHPTOOLS_CFG = ENV["AHPTOOLS_CFG"] || File.join(File.dirname(__FILE__), "..", "..", "conf", "config.yml")
-  CONFIG = YAML.load_file(AHPTOOLS_CFG)[AHPTOOLS_ENV.to_sym]
+  CONFIG = YAML.load(ERB.new(IO.read(AHPTOOLS_CFG)).result)[AHPTOOLS_ENV.to_sym]
 end
-

@@ -9,6 +9,7 @@ module AhpTools
           :agents => "",
           :env => ""
         }
+        mandatory_options = %w( agents env )
 
         parser = OptionParser.new do |opts|
 
@@ -21,9 +22,13 @@ module AhpTools
           BANNER
 
           opts.separator ""
-          opts.on("-a AGENTS", "--agents", "the agents to be added to an environment") { |a| options[:agents] = a.split(/[:,]/)  }
-          opts.on("-e ENV", "--env", "environment to which one or more agents will be added") { |env| options[:env] = env }
+          opts.on("-a", "--agents AGENTS", "the agents to be added to an environment") { |a| options[:agents] = a.split(/[:,]/)  }
+          opts.on("-e", "--env ENV", "environment to which one or more agents will be added") { |env| options[:env] = env }
           opts.parse!(arguments)
+
+          if mandatory_options && mandatory_options.find { |o| options[o.to_sym].nil? }
+            stdout.puts opts; exit
+          end
 
         end
 

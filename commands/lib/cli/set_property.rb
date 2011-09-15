@@ -13,8 +13,8 @@ module AhpTools
           :value => nil,
           :remove => false,
           :no_exec => false,
-					:append => false,
-					:append_delimiter => ' '
+          :append => false,
+          :append_delimiter => ' '
         }
       end
 
@@ -38,9 +38,8 @@ module AhpTools
           opts.on("--append")  { |o| @options[:append]  = o }
           opts.on("--append_delimiter DELIMITER", "--append_delimiter", "The delimiter to use, or 'none'.  Defaults to space") { |o| @options[:append_delimiter] = o }
           opts.parse!(arguments)
-
-          if mandatory_options && mandatory_options.find { |o| @options[o.to_sym].nil? }
-            $stdout.puts opts; exit
+          if mandatory_options && mandatory_options.find { |o| options[o.to_sym].nil? }
+            stdout.puts opts; exit
           end
 
         end
@@ -63,15 +62,15 @@ module AhpTools
 
           [ --remove ] - By default, set_property will ADD the requested property.
 
-					[ --append ] - By default, set_property will replace the old value with the new value.  --append adds to the end, separating with <append_delimiter> (space by default).
+          [ --append ] - By default, set_property will replace the old value with the new value.  --append adds to the end, separating with <append_delimiter> (space by default).
 
-					[ --append_delimiter ] - By default, delimiter for --append is a space.  Set an alternate delimiter, or "none".
+          [ --append_delimiter ] - By default, delimiter for --append is a space.  Set an alternate delimiter, or "none".
 
           [ --no_exec ] - Do everything as normal, but stop short of setting any properties.
 
           --resource_type type[,type,...] - Where type is one of the following:
               agent
-							workflow
+              workflow
               project
               env - environment (not common)
 

@@ -19,16 +19,17 @@ public class RemoteReportServiceTest {
 //  private RemoteReport report = new ProjectListReport();
 //  private RemoteReport report = new BuildLivesInEnvironmentReport();
 //  private RemoteReport report = new PerProjectDeploymentReport();
-// private RemoteReport report = new WhatsBeenDeployed();
-    private RemoteReport report = new WhatsBeenDeployedWithSuccessStatus();
-// private RemoteReport report = new ArtifactSets();
-// private RemoteReport report = new PropertiesForAgentsInChosenEnvironment();
+//  private RemoteReport report = new WhatsBeenDeployed();
+//  private RemoteReport report = new WhatsBeenDeployedWithSuccessStatus();
+//  private RemoteReport report = new ArtifactSets();
+//  private RemoteReport report = new PropertiesForAgentsInChosenEnvironment();
 //  private RemoteReport report = new AgentsForWhomParentJobSucceeded();
-// private RemoteReport report = new AgentsMissingFromProdAndNonProdEnvironments();
-//   private RemoteReport report = new AgentsInBothProdAndNonProdEnvironments();
+//  private RemoteReport report = new AgentsMissingFromProdAndNonProdEnvironments();
+//  private RemoteReport report = new AgentsInBothProdAndNonProdEnvironments();
 //  private RemoteReport report = new ProjectListReport();
 //  private RemoteReport report = new SampleReport();
 //  private RemoteReport report = new TeamCityIntegrationReport();
+  private RemoteReport report = new AgentsInEnvironmentByKeyword();
 
   @Test
   public void deleteReportFromServer() throws Exception {

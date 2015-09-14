@@ -1,0 +1,7 @@
+#! /usr/bin/env jruby -J-cp conf/client:conf/spring-client
+
+require File.expand_path(File.dirname(__FILE__) + "/../lib/ahp_tools")
+require "cli/delete_project"
+require "commands/delete_project_command"
+
+AhpTools::CLI::DeleteProject.execute(STDOUT, ARGV)

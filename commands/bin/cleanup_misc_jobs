@@ -1,0 +1,7 @@
+#! /usr/bin/env jruby -J-cp conf/client:conf/spring-client
+
+require File.expand_path(File.dirname(__FILE__) + "/../lib/ahp_tools")
+require "cli/cleanup_misc_jobs"
+require "commands/cleanup_misc_jobs_command"
+
+AhpTools::CLI::CleanupMiscJobs.execute(STDOUT, ARGV)

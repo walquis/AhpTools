@@ -7,8 +7,8 @@
 :production:
   :host_name: deploy
   :host_port: 4567
-  :username: <%= IO.read('/home/buildadmin/.ahptoolsuser').strip %>
-  :password: <%= IO.read('/home/buildadmin/.ahptoolspw').strip %>
+  :username: <%= IO.read("/home/#{ENV['LOGNAME']}/.ahptoolsuser").strip %>
+  :password: <%= IO.read("/home/#{ENV['LOGNAME']}/.ahptoolspw").strip %>
 
 :production_db:
   :host_name: prod-box
